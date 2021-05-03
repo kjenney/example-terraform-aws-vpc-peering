@@ -1,16 +1,23 @@
+/**
+ * All values can be provided by terraform.tfvars
+ *
+ */
 variable "region" {
-  default = "ap-southeast-2"
+  default = "us-west"
 }
 
 variable "ami_id" {
   default = "ami-a0360bc3"
 }
 
-variable "instance_class" {
-  default = "m3.medium"
+variable "availability_zone_names" {
+  default = ["us-west-1a","us-west-1c",]
 }
 
 variable "key_name" {
-  description = "SSH key name to launch instances with"
+  default = "example"
 }
 
+variable "instance_class" {
+  default = "m3.medium"
+}

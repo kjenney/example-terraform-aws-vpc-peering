@@ -11,7 +11,7 @@ Once provisioning is complete, run the [test script](test-instance-connectivity.
 
 ## Dependencies
 
-* Terraform v0.7 or greater
+* Terraform v0.15 or greater
 * An AWS account
 
 ## Usage
@@ -32,10 +32,13 @@ $ cat ~/.aws/credentials
 [default]
 aws_access_key_id = your key id
 aws_secret_access_key = your secret key
-
 ```
 
-**2\. Review the Terraform plan.**
+**2\. Set tfvars**
+
+Rename `terraform.tfvars.example` to `terraform.tfvars` and set the variables accordingly.
+
+**3\. Review the Terraform plan.**
 
 Execute the below command and ensure you are happy with the plan.
 
@@ -43,7 +46,7 @@ Execute the below command and ensure you are happy with the plan.
 $ terraform plan
 ```
 
-**3\. Execute the Terraform apply.**
+**4\. Execute the Terraform apply.**
 
 Now execute the plan to provision the AWS resources.
 
@@ -51,13 +54,13 @@ Now execute the plan to provision the AWS resources.
 $ terraform apply
 ```
 
-**4\. Run the test PHP script.**
+**5\. Run the test PHP script.**
 
 ``` bash
-$ php test-instance-connectivity.php
+$ python test-instance-connectivity.py
 ```
 
-**5\. Destroy the resources.**
+**6\. Destroy the resources.**
 
 Once you are finished your testing, ensure you destroy the resources to avoid unnecessary AWS charges.
 

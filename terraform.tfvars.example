@@ -1,0 +1,7 @@
+ami_id = "ami-12345"
+availability_zone_names = [
+  "us-west-1a",
+  "us-west-1c",
+]
+instance_class = "t2.medium"
+key_name = "example"
